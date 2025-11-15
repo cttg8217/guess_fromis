@@ -1,0 +1,8 @@
+.answer-button.correct {
+    background-color: green;
+    /* border-radius는 .answer-button에서 상속받으므로 여기서 다시 설정할 필요 없음 */
+}
+
+.answer-button.incorrect {
+    background-color: red;
+}

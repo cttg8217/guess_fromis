@@ -86,10 +86,10 @@ async function handleAnswerClick(clickedButton) {
     answerButtons.forEach(button => {
         const text = button.textContent;
         if(answer.includes(text)) {
-            button.style.backgroundColor = 'green';
+            button.classList.add('correct');
         }
         else {
-            button.style.backgroundColor = 'red'
+            button.classList.add('incorrect');
         }
     })
     if(answer.includes(selectedText)){
@@ -112,7 +112,7 @@ async function handleAnswerClick(clickedButton) {
         questionNum += 1;
         setTimeout(() => {
             answerButtons.forEach(button => {
-            button.style.backgroundColor = 'initial';
+            button.classList.remove('correct', 'incorrect');
         })
         question();
         }, 2000);
