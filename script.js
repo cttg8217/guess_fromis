@@ -75,6 +75,9 @@ function question()
     imageElement.style = "max-width: 100%; max-height: 100%";
     spanElement.appendChild(imageElement);
     answer = imagePath
+
+    const problemNumber = document.getElementById('prob');
+    problemNumber.textContent = questionNum + 1;
 }
 
 async function handleAnswerClick(clickedButton) {
@@ -131,5 +134,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const finalScore = urlParams.get('score');
         const scoreElement = document.getElementById('finalScore');
         scoreElement.textContent = finalScore;
+
+        const messageText = document.getElementById('message');
+        if(finalScore < 5)
+        {
+            messageText.textContent = '프로미스나인 하수예요ㅠㅠ';
+        }
+        else if(finalScore < 7)
+        {
+            messageText.textContent = '프로미스나인 중수예요';
+        }
+        else if(finalScore < 10)
+        {
+            messageText.textContent = '프로미스나인 고수예요!';
+        }
+        else
+        {
+            messageText.textContent = '프로미스나인 덕후예요!!'
+        }
     }
 })
